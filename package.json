@@ -1,0 +1,12 @@
+{
+  "name": "fazscore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -w test/*.test.js"
+  },
+  
+  "author": "Scott Ballantyne",
+  "license": "GPL-3.0"
+}
