@@ -1,14 +1,26 @@
-
 module.exports = class FAZScore {
 
-  constructor(decay, population) {
+  constructor(decay, population=[], then) {
     var self = this;
     this.sqrAvg = 0;
     this.avg = 0;
     this.decay = decay;
-    population.forEach(function(p) {
-      self.update(p);
-    })
+    this.load(population).then(function() {
+      if (then != undefined) {
+        then();
+      }
+    });
+  }
+
+  load(population) {
+    var self = this;
+    return new Promise(function(resolve, reject) {
+      while (population.length > 0) {
+        var word = population.pop();
+        self.update(word);
+      }
+      resolve();
+    });
   }
 
   update(value) {

@@ -35,9 +35,9 @@ describe('fazscore', function() {
 
       // Display 'most' trending term with trending score
 
-      assert.equal(scores['England'], -0.6437116131343118);
-      assert.equal(scores['Ireland'], 6.324685526546452);
-      assert.equal(scores['Scotland'], 5.082337064517753);
+      assert.equal(scores['England'], -0.657902592254752);
+      assert.equal(scores['Ireland'], 6.730905723763415);
+      assert.equal(scores['Scotland'], 5.565612242636465);
 
       list = list.sort(function(a, b) {
         return b[1] - a[1];
